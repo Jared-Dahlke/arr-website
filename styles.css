@@ -56,6 +56,24 @@ a { color: var(--red); }
   padding: 0 20px;
 }
 
+/* ---------- skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  padding: 12px 18px;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus { top: 0; }
+
 /* ---------- type ---------- */
 
 h1, h2, h3 {
@@ -616,6 +634,98 @@ h3 {
 .hours-table tr:last-child th, .hours-table tr:last-child td { border-bottom: 0; }
 
 .hours-card .btn { width: 100%; }
+
+/* ---------- service area ---------- */
+
+.service-area { margin-top: 2.25rem; }
+
+.service-area > p { color: var(--slate); max-width: 56ch; }
+
+.area-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 12px;
+}
+
+.area-chips li {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brick);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red);
+  border-radius: 4px;
+  padding: 7px 12px;
+}
+
+.area-note {
+  font-size: 0.95rem;
+  color: var(--slate);
+}
+
+/* ---------- FAQ ---------- */
+
+.section-faq .faq-list {
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: "+";
+  flex: none;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--red);
+  border: 1.5px solid var(--red);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "\2013";
+  transform: rotate(180deg);
+}
+
+.faq-item summary:hover { color: var(--red); }
+
+.faq-a { padding: 0 20px 18px; }
+
+.faq-a p { color: var(--slate); max-width: 62ch; }
 
 /* ---------- estimate / contact ---------- */
 

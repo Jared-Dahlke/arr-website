@@ -7,6 +7,11 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    # TEMPORARY: arr284736.netlify.app duplicates alabamareliableroofing.com's
+    # content while the real domain still points at the old site. REMOVE this
+    # header (and the <meta name="robots" content="noindex"> in index.html)
+    # when the real domain is pointed at this site.
+    X-Robots-Tag = "noindex"
 
 # CSS/JS are not content-fingerprinted, so they must revalidate on every
 # load (ETag makes this cheap) — a max-age here serves stale styles for an
@@ -23,5 +28,20 @@
 
 [[headers]]
   for = "/photos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/og.jpg"
   [headers.values]
     Cache-Control = "public, max-age=86400"
