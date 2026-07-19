@@ -1,0 +1,13 @@
+{
+  "name": "Alabama Reliable Roofing & Construction",
+  "short_name": "ARR Roofing",
+  "description": "Birmingham's roofing experts since 1998. Call (205) 369-9630.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1C2229",
+  "theme_color": "#1C2229",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
