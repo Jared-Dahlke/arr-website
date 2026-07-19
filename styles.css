@@ -170,12 +170,7 @@ h3 {
 /* ---------- header ---------- */
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.92);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  background: var(--white, #fff);
   border-bottom: 1px solid var(--line);
   padding-top: env(safe-area-inset-top);
 }
