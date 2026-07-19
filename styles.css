@@ -41,6 +41,7 @@ body {
 }
 
 img, svg { display: block; max-width: 100%; }
+img { height: auto; }
 
 a { color: var(--red); }
 
@@ -182,7 +183,7 @@ h3 {
 .header-inner {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 6px 16px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -195,7 +196,7 @@ h3 {
   min-height: 44px;
 }
 
-.brand img { height: 46px; width: auto; }
+.brand img { height: 34px; width: auto; }
 
 .site-nav {
   display: none;
@@ -219,7 +220,7 @@ h3 {
 @media (min-width: 900px) {
   .site-nav { display: flex; }
   .header-call { display: inline-flex; margin-left: 0; }
-  .brand img { height: 54px; }
+  .brand img { height: 44px; }
 }
 
 /* ---------- hero ---------- */
@@ -374,7 +375,8 @@ h3 {
 
 .work-item img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: var(--radius);
   background: var(--fog);
