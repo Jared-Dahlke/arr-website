@@ -7,11 +7,6 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    # TEMPORARY: arr284736.netlify.app duplicates alabamareliableroofing.com's
-    # content while the real domain still points at the old site. REMOVE this
-    # header (and the <meta name="robots" content="noindex"> in index.html)
-    # when the real domain is pointed at this site.
-    X-Robots-Tag = "noindex"
 
 # CSS/JS are not content-fingerprinted, so they must revalidate on every
 # load (ETag makes this cheap) — a max-age here serves stale styles for an
@@ -45,3 +40,31 @@
   for = "/og.jpg"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Old GoHighLevel site URLs -> matching sections of the new single-page site.
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/#estimate"
+  status = 301
+
+[[redirects]]
+  from = "/gallery"
+  to = "/#work"
+  status = 301
+
+[[redirects]]
+  from = "/roofing-services"
+  to = "/#services"
+  status = 301
+
+# The Netlify subdomain should never compete with the real domain.
+[[redirects]]
+  from = "https://arr284736.netlify.app/*"
+  to = "https://alabamareliableroofing.com/:splat"
+  status = 301
+  force = true
