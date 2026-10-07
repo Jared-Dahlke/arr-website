@@ -32,7 +32,7 @@
   function animateCount(el) {
     var target = parseInt(el.getAttribute("data-count"), 10);
     if (reduced || !window.requestAnimationFrame) {
-      el.textContent = target;
+      el.textContent = target.toLocaleString("en-US");
       return;
     }
     var start = null;
@@ -41,7 +41,7 @@
       if (!start) start = ts;
       var p = Math.min((ts - start) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased);
+      el.textContent = Math.round(target * eased).toLocaleString("en-US");
       if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -62,7 +62,7 @@
     counts.forEach(function (el) { cio.observe(el); });
   } else {
     counts.forEach(function (el) {
-      el.textContent = el.getAttribute("data-count");
+      el.textContent = parseInt(el.getAttribute("data-count"), 10).toLocaleString("en-US");
     });
   }
 })();
