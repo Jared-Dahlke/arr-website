@@ -196,9 +196,10 @@ h3 {
 .header-inner {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 6px 16px;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
+  justify-content: center;   /* phones: the logo is the whole header — give it the stage */
   gap: 20px;
 }
 
@@ -209,7 +210,9 @@ h3 {
   min-height: 44px;
 }
 
-.brand img { height: 34px; width: auto; }
+/* The logo carries the company name, so it has to be readable at a glance.
+   Phones: width-driven so it fills most of the header (~220px wide). */
+.brand img { width: min(220px, 68vw); height: auto; }
 
 .site-nav {
   display: none;
@@ -231,9 +234,10 @@ h3 {
 .header-call { display: none; margin-left: auto; }
 
 @media (min-width: 900px) {
+  .header-inner { justify-content: flex-start; padding: 8px 16px; }
   .site-nav { display: flex; }
   .header-call { display: inline-flex; margin-left: 0; }
-  .brand img { height: 44px; }
+  .brand img { width: auto; height: 56px; }
 }
 
 /* ---------- hero ---------- */
